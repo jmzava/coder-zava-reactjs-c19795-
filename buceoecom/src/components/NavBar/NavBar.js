@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import CartWidget from "../Cartwidget/CartWidget";
+
+
 
 function NavBar() {
   return (
@@ -14,6 +17,7 @@ function NavBar() {
             <Nav.Link href="#home"> Home </Nav.Link>
             <Nav.Link href="#shop"> Shop </Nav.Link>
             <Nav.Link href="#login"> Log In </Nav.Link>
+            <Nav.Link href="#login"> <CartWidget /> </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
