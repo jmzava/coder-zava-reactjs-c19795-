@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './ItemCount.css'
 // import { Prev } from "react-bootstrap/esm/PageItem";
 
 function ItemCount({ contadorInicial, contadorStock, contadorMinimo }) {
@@ -14,11 +15,16 @@ function ItemCount({ contadorInicial, contadorStock, contadorMinimo }) {
     contador > contadorMinimo &&
       mueveContador(contadorprevio => contadorprevio - 1);
   };
+
+  const resetContador = () =>{
+      mueveContador(contadorInicial)
+  }
   return (
     <div className="counter">
-      <h1> {contador} </h1> <button onClick={sumaContador}> + </button>{" "}
-      <button onClick={restaContador}> - </button>
-    </div>
+      <h1 className="contadorText"> {contador}   </h1>
+      <button onClick={restaContador}className="botonCard"> - </button>
+      <button onClick={resetContador} className="botonCard2"> Reset </button>
+      <button onClick={sumaContador} className="botonCard"> + </button></div>
   );
 }
 

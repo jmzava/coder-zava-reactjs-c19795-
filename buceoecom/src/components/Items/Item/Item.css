@@ -1,0 +1,59 @@
+.cardStyle{
+    width:225px;
+    height: 370px;
+    border-color: black;
+    border-radius: 16px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: cadetblue;
+
+}
+
+.centerThings{
+    width: 100%;
+}
+.cardImg{  
+    text-align: center;
+    width:200px;
+    height: 150px; 
+}
+
+.footerClass{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.cardTitle{
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+}
+
+
+.cardText{
+    text-align: center;
+    font-size: 12px;
+}
+
+.cardBoton {
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    justify-content: center;
+    margin:2px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .cardBoton:hover {
+    background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+  }

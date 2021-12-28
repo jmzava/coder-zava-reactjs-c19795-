@@ -1,6 +1,18 @@
+
 .App {
   text-align: center;
 }
+
+.fondoPagina{
+  background-image: url("../src/components/Structure/Images/backs/backgound.jpg");
+  background-size: "cover";
+  height: 100vh;
+  margin-top: -70px;
+  background-repeat:no-repeat;
+  position: relative;
+  }
+  
+
 
 .App-logo {
   height: 40vmin;
@@ -27,6 +39,8 @@
 .App-link {
   color: #61dafb;
 }
+
+
 
 @keyframes App-logo-spin {
   from {
