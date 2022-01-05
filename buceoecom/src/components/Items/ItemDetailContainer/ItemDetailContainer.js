@@ -14,7 +14,7 @@ function ItemDetailContainer() {
       .then((resp) => setProdIndividual(resp.find(prod => prod.id === 1)))
       .catch((err) => console.log(err))
       .finally(()=> setCargando(false));
-  },{});
+  },[]);
   
 
 
