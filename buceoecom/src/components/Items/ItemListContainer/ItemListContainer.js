@@ -3,13 +3,15 @@ import { cargaPromesa } from "../../../helpers/mock";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import CargandoSpinner from "../../Structure/Spinners/Spinner";
-import"./ItemListContainer.css"
+import "./ItemListContainer.css";
+
 
 function ItemListContainer() {
-    const [cargando, setCargando] = useState(true)
-    const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
+
+    useEffect(() => {
     cargaPromesa
       .then((resp) => setProductos(resp))
       .catch((err) => console.log(err))
@@ -18,11 +20,13 @@ function ItemListContainer() {
 
   return (
     <div>
-      
-      {cargando ? 
-      <h2 className="centerText">Cargando Contenido <CargandoSpinner/></h2> : 
-      <ItemList productos={productos} />
-    }
+      {cargando ? (
+        <h2 className="centerText">
+          Cargando Contenido Listado Productos<CargandoSpinner />
+        </h2>
+      ) : (
+        <ItemList productos={productos} />
+      )}
     </div>
   );
 }
