@@ -5,7 +5,7 @@ function Pagina(props) {
     const { greeting } = props;
 
     return (
-        <div>
+        <div className='fondoPagina'>
             <h1 className="centerText">{greeting}</h1>
         </div>
     )

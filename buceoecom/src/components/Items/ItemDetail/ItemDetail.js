@@ -3,8 +3,7 @@ import "./ItemDetail.css"
 import ItemCount from '../ItemCount/ItemCount'
 
 function ItemDetail({ prodIndividual }) {
-    const { imagen, titulo, desc, precio, inicial, stock, minimo } = prodIndividual
-    console.log(prodIndividual)
+    const { imagen, titulo, desc, precio, inicial, stock, minimo, categoria} = prodIndividual
     return (
         <div className='cardProdIndividual'>
             <div className='cardProdIndividualImg'>
