@@ -22,7 +22,6 @@ function ItemDetailContainer() {
 
   return (
     <div>
-            {console.log(cargandoProdIndividual)}
             {cargandoProdIndividual ? (
            <h2 className="centerText">
           Cargando Contenido Item Individual <CargandoSpinner />

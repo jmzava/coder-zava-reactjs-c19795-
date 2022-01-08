@@ -1,4 +1,120 @@
+.containerItemDetail {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: "Open Sans", sans-serif;
+}
 
+.boxItemDetail {
+  width: 900px;
+  background: linear-gradient(to bottom left, #1558d4 40%, #230575 100%);
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+  border-color: black;
+  border-radius: 16px;
+}
+.prodImgItemDetail {
+  text-align: center;
+  width: 300px;
+  height: 400px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  transition: all 0.5s linear;
+}
+.prodImgItemDetail:hover {
+  transform: scale(1.03);
+}
+
+.prodInfoItemDetail {
+  float: right;
+  width: 450px;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+.prodTituloItemDetail {
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 2.5em;
+  color: #333;
+  font-family: "Archivo Black", sans-serif;
+}
+.prodPrecioItemDetail {
+  margin-top: -40px;
+  font-size: 35px;
+  font-weight: bolder;
+  color: coral;
+}
+
+.prodDescItemDetail{
+  margin-top: -20px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #555;
+
+}
+
+.botonItemDetail{
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 12px;
+  justify-content: center;
+  margin:4px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  width: 50%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.botonItemDetail:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+ 
+.btnItemDetail {
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: inline-block;
+  width: 40%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+}
+
+.btnItemDetail:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.btnCardItemDetail{    
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 12px;
+  justify-content: center;
+  margin:2px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  width: 40%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;} 
+
+
+/*  
 .cardProdIndividual{
     background-color: cadetblue;
     box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
@@ -20,7 +136,7 @@
 
 }
 .cardImg2{  
-    /* text-align: center; */
+     text-align: center; 
     width: 200px;
     height: 250px; 
 }
@@ -33,9 +149,8 @@
     justify-items: start;
     align-content: start;
     padding: 1em 1.5em 0 0;
-  }
-/* 
-
+  }  */
+/*
 .
 
 .prodIndividualCard{

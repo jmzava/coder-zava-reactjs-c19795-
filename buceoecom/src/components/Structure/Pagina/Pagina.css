@@ -4,3 +4,33 @@
     color: blanchedalmond;
     text-align: center;
 }
+.pagina {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	background-size:cover;
+	background-position:center;
+}
+.paginaContenido {
+	/* width:100%; */
+	max-width:100%;
+	text-align:center;
+
+}
+.paginaImagen {
+	width:360px;
+	display:block;
+	margin:0 auto;
+	position:relative;
+	top:2px;
+}
+.paginaCard {
+    width: 900px;
+    background: linear-gradient(to bottom left, #1558d4 40%, #230575 100%);
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+    border-color: black;
+    border-radius: 16px;
+}

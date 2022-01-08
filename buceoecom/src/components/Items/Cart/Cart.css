@@ -1,0 +1,28 @@
+.proxCart {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	background-size:cover;
+	background-position:center;
+}
+.ProxCartContenido {
+	width:100%;
+	max-width:600px;
+	text-align:center;
+
+}
+.proxCartImagen {
+	width:360px;
+	display:block;
+	margin:0 auto;
+	position:relative;
+	top:2px;
+}
+.proxCartCard {
+	background:#fff;
+	text-align:center;
+	padding:2em;
+	box-shadow:0 12px 22px rgba(0,0,0,0.05  );
+	border-radius:3px;
+}

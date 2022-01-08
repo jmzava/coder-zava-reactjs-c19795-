@@ -3,3 +3,18 @@
     height:50px;
     margin-left: 0 px;
 }
+
+.navFont{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blanchedalmond;
+}
+
+.navBarColor {
+  background-color: #0e7ba7; }
+
+.dropdown-menu {
+  background-color: #0e7ba7;
+  color: white; }
+
+.dropdown-item {
+  color: white; }

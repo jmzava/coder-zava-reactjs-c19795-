@@ -1,4 +1,19 @@
-.grupoTarjeta {
+/* .grupoTarjeta {
 margin: 5px;
 padding: 5px;
+} */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+.principalCards{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.listaCards{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
 }

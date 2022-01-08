@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <Navbar bg="dark">
+    <Navbar className='navBarColor'>
         <Container>
           <Navbar.Brand>
               <img src={Logo} className="d-inline-block logo" alt="logo" />
@@ -29,7 +29,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link eventKey="2" as={Link} to="/cart">
+            <Nav.Link className="cartLogo" eventKey="2" as={Link} to="/cart">
               <CartWidget />
             </Nav.Link>
           </Nav>
