@@ -32,20 +32,3 @@ function ItemDetail({ prodIndividual }) {
 }
 
 export default ItemDetail;
-
-//<div classNameName='cardProdIndividual'>
-// <div classNameName='cardProdIndividualImg'>
-//
-// </div>
-// <div classNameName='carProdIndividualContent'>
-//     <h1>{titulo}</h1>
-//     <h2>{desc}</h2>
-//     <h3>${precio}</h3>
-//     <ItemCount
-//         contadorInicial={inicial}
-//         contadorStock={stock}
-//         contadorMinimo={minimo} />
-//     <button onClick={()=>navigate(-1)}>Volver</button>
-// </div>
-
-// </div>

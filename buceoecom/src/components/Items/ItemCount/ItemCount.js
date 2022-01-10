@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './ItemCount.css'
-// import { Prev } from "react-bootstrap/esm/PageItem";
 
 function ItemCount({ contadorInicial, contadorStock, contadorMinimo }) {
   const [contador, mueveContador] = useState(contadorInicial);

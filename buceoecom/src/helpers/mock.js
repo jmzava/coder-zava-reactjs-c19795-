@@ -8,11 +8,6 @@ const products =[
     {id: "7", imagen:"/imagenes/belt1.png", titulo: "cinturon", desc:"cinturon para lastre", inicial:0, stock:3, minimo:0, categoria:"Varios"}
 ]
 
-//     {id: 8, imagen:"/imagenes/mask1.png", titulo: "luneta", desc:"visor 2", inicial:0, stock:3, minimo:0},
-//     {id: 9, imagen:"/imagenes/smb1.png", titulo: "Boya Marcadora", desc:"Boya de superficie", inicial:0, stock:4, minimo:0},
-//     {id: 10, imagen:"/imagenes/belt1.png", titulo: "cinturon", desc:"cinturon para lastre", inicial:0, stock:3, minimo:0},
-//     {id: 11, imagen:"/imagenes/mask1.png", titulo: "luneta", desc:"visor 2", inicial:0, stock:3, minimo:0}
-
 
 
 export const cargaPromesa = new Promise ((resolve, reject)=>{
