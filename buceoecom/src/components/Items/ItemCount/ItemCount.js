@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './ItemCount.css'
 
-function ItemCount({ contadorInicial, contadorStock, contadorMinimo }) {
+function ItemCount({ contadorInicial, contadorStock, contadorMinimo, onAdd }) {
   const [contador, mueveContador] = useState(contadorInicial);
 
   const sumaContador = () => {
@@ -23,7 +23,10 @@ function ItemCount({ contadorInicial, contadorStock, contadorMinimo }) {
       <h1 className="contadorText"> {contador}   </h1>
       <button onClick={restaContador}className="botonCard"> - </button>
       <button onClick={resetContador} className="botonCard2"> Reset </button>
-      <button onClick={sumaContador} className="botonCard"> + </button></div>
+      <button onClick={sumaContador} className="botonCard"> + </button>
+      <br/>
+      <button onClick={()=> {onAdd(contador); resetContador()}} hidden={contador < 1 && "hidden"} className="btnAddCart">Add to Cart</button>
+    </div>
   );
 }
 

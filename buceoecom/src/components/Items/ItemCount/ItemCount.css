@@ -49,3 +49,27 @@
   font-size: 25px;
   text-align: center;
 }
+
+
+.btnAddCart {
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 22px;
+  justify-content: center;
+  margin:2px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  width: 85%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btnAddCart:hover {
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}

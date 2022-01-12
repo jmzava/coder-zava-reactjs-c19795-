@@ -2,11 +2,22 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 function ItemDetail({ prodIndividual }) {
   const { imagen, titulo, desc, precio, inicial, stock, minimo } =
     prodIndividual;
   const navigate = useNavigate();
+  
+  const [show,setShow] = useState(true)
+
+
+  const onAdd =(contador) => {
+      setShow(false)
+      let texto= "Se agregaran al Carrito : " + contador
+      alert(texto)
+  }
+
   return (
     <div className="containerItemDetail">
       <div className="boxItemDetail">
@@ -20,11 +31,12 @@ function ItemDetail({ prodIndividual }) {
             <ItemCount
                 contadorInicial={inicial}
                 contadorStock={stock}
-                contadorMinimo={minimo} />
+                contadorMinimo={minimo} 
+                onAdd={onAdd}/>
             <br />
             <br />
             <button className="btnItemDetail btnCardItemDetail" onClick={()=>navigate(-1)}>Volver</button>
-            <button className="btnItemDetail btnCardItemDetail">Add to Cart</button>
+            {/* <button className="btnItemDetail btnCardItemDetail">Add to Cart</button> */}
         </div>
       </div>
     </div>
