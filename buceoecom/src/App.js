@@ -6,10 +6,12 @@ import ItemListContainer from "./components/Items/ItemListContainer/ItemListCont
 import Pagina from "./components/Structure/Pagina/Pagina";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Items/Cart/Cart"
+import { cartContext } from "./context/cartContext";
 
 function App() {
   return (
     <div className="buceoecom fondoPagina">
+      <cartContext.Provider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -19,6 +21,7 @@ function App() {
             <Route exact path ='/cart' element={<Cart />}/>
         </Routes>
       </BrowserRouter>
+      </cartContext.Provider>
     </div>
   );
 }
