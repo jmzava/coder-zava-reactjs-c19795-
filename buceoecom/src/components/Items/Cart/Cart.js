@@ -43,16 +43,3 @@ function Cart() {
 }
 
 export default Cart;
-
-//  viejo cart
-
-// <section classNameName="proxCart">
-// /* <div classNameName="proxCartContenido">
-// <img classNameName="proxCartImagen" src={Logo} alt="Logo Buceo"/>
-// <div classNameName="proxCartCard">
-//   <h1>Proximamente Aqui vera su Compra</h1>
-//   <button classNameName="btnItemDetail btnCardItemDetail" onClick={()=>navigate(-1)}>Volver</button>
-
-// </div>
-// </div>
-// </section> */

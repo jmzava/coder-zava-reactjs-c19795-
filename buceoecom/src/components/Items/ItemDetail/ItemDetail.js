@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useCartContext } from "../../../context/cartContext";
 
 function ItemDetail({ prodIndividual }) {
@@ -10,10 +10,10 @@ function ItemDetail({ prodIndividual }) {
   
   const navigate = useNavigate();
   
-  const [show,setShow] = useState(true)
-
+  // const [show,setShow] = useState(true)
+  
   const onAdd =(contador) => {
-      setShow(false)
+      // setShow(false)
       agregarItemCarrito({...prodIndividual, qty: contador})
   }
 

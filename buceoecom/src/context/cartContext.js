@@ -11,8 +11,13 @@ export const CartContextProvider = ({children}) => {
 
     const [cartLista, setCartLista] = useState([])
 
-
-
+    function globoCarrito(){
+    
+        const totalProducts=cartLista.map(productCart=>productCart.qty).reduce((prev,curr) => prev+curr,0)
+               
+    return totalProducts
+    }
+    
     function agregarItemCarrito (items) {
         
         const indice=cartLista.findIndex(i => i.id === items.id)
@@ -21,7 +26,9 @@ export const CartContextProvider = ({children}) => {
             const qtyVieja=cartLista[indice].qty
             let qtyNueva= qtyVieja + items.qty
             cartLista[indice].qty=qtyNueva
-            
+            let arrAux = [...cartLista]
+            setCartLista(arrAux)
+
         }else{
             setCartLista([...cartLista, items])
         }
@@ -40,7 +47,8 @@ export const CartContextProvider = ({children}) => {
             cartLista,
             agregarItemCarrito,
             removeItemCarrito,
-            vaciarCarrito
+            vaciarCarrito,
+            globoCarrito
             }}
      > 
      {children}

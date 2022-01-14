@@ -7,8 +7,14 @@ import Logo from "../Images/logo/scuba.png";
 import "./NavBar.css";
 import CartWidget from "../Cartwidget/CartWidget";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../../context/cartContext";
 
 function NavBar() {
+  const {globoCarrito} =  useCartContext()
+
+  const pepe = globoCarrito()
+
+  
   return (
     <Navbar className='navBarColor'>
         <Container>
@@ -32,6 +38,7 @@ function NavBar() {
             <Nav.Link className="cartLogo" eventKey="2" as={Link} to="/cart">
               <CartWidget />
             </Nav.Link>
+            {pepe > 0 ? <div className="cartNumber"> {pepe} </div> : <div></div>}
           </Nav>
         </Navbar.Collapse>
       </Container>

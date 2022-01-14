@@ -4,6 +4,9 @@
     margin-left: 0 px;
 }
 
+.cartLogo{
+  font-size: 30px;
+}
 .navFont{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: blanchedalmond;
@@ -18,3 +21,15 @@
 
 .dropdown-item {
   color: white; }
+
+
+  .cartNumber {
+    background: linear-gradient(to bottom left, #3515e9 40%, #230575 100%);
+    padding: 0;
+    text-align: center;
+    color: blanchedalmond;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    transform: translate(-20px, 5px);
+  }
