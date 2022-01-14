@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../../Structure/Images/logo/scuba.png";
 import "./Cart.css"
 import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../../../context/cartContext";
@@ -23,12 +22,16 @@ function Cart() {
                      <div className="cartCelda">Subtotal</div>
                </div>
                <div className="cartBody">
-                     <div className="cartItemDetails">
+                    
                            {cartLista.map(productos =>(<CartItem key={productos.id} productos={productos} />))}
-                     </div>
+
                </div>
                <div className="cartFooter">
+               <div className="cartCeldaBotonVolver2">
+                     <button className=" cartBotonVolver2" onClick={vaciarCarrito}>Vaciar</button>
+               </div>
                <div className="cartCeldaBotonVolver1"></div>
+
                <div className="cartCeldaBotonVolver2">
                      <button className=" cartBotonVolver2" onClick={()=>navigate(-1)}>Volver</button>
                </div>

@@ -17,12 +17,10 @@ function ItemDetail({ prodIndividual }) {
 
   const onAdd =(contador) => {
       setShow(false)
-      agregarItemCarrito({...prodIndividual, cantidad: contador})
-      console.log(prodIndividual);
-      console.log(cartLista);
+      agregarItemCarrito({...prodIndividual, qty: contador})
   }
 
-  const {cartLista, vaciarCarrito, agregarItemCarrito} = useCartContext()
+  const {agregarItemCarrito} = useCartContext()
 
 
   return (
