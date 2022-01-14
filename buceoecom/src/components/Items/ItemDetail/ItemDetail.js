@@ -3,6 +3,7 @@ import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import { useCartContext } from "../../../context/cartContext";
 
 function ItemDetail({ prodIndividual }) {
   const { imagen, titulo, desc, precio, inicial, stock, minimo } =
@@ -12,11 +13,17 @@ function ItemDetail({ prodIndividual }) {
   const [show,setShow] = useState(true)
 
 
+
+
   const onAdd =(contador) => {
       setShow(false)
-      let texto= "Se agregaran al Carrito : " + contador
-      alert(texto)
+      agregarItemCarrito({...prodIndividual, cantidad: contador})
+      console.log(prodIndividual);
+      console.log(cartLista);
   }
+
+  const {cartLista, vaciarCarrito, agregarItemCarrito} = useCartContext()
+
 
   return (
     <div className="containerItemDetail">

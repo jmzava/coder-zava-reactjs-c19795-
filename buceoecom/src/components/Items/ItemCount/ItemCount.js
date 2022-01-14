@@ -18,6 +18,7 @@ function ItemCount({ contadorInicial, contadorStock, contadorMinimo, onAdd }) {
   const resetContador = () =>{
       mueveContador(contadorInicial)
   }
+
   return (
     <div className="counter">
       <h1 className="contadorText"> {contador}   </h1>
