@@ -11,8 +11,20 @@ export const CartContextProvider = ({children}) => {
 
     const [cartLista, setCartLista] = useState([])
 
+
+
     function agregarItemCarrito (items) {
-        setCartLista([...cartLista, items])
+        
+        const indice=cartLista.findIndex(i => i.id === items.id)
+       
+        if (indice > -1){
+            const qtyVieja=cartLista[indice].qty
+            let qtyNueva= qtyVieja + items.qty
+            cartLista[indice].qty=qtyNueva
+            
+        }else{
+            setCartLista([...cartLista, items])
+        }
     }
 
     function vaciarCarrito(){

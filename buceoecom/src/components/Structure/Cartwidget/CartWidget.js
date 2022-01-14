@@ -1,11 +1,11 @@
 import React from 'react'
-import {FaOpencart} from "react-icons/fa"
+import {FaShoppingCart} from "react-icons/fa"
 import './CartWidget.css'
 
 function CartWidget() {
     return (
         <div>
-            <FaOpencart className='cartWidget' />
+            <FaShoppingCart className='cartWidget' />
         </div>
     )
 }
