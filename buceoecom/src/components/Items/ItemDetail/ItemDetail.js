@@ -6,14 +6,11 @@ import { useState } from 'react';
 import { useCartContext } from "../../../context/cartContext";
 
 function ItemDetail({ prodIndividual }) {
-  const { imagen, titulo, desc, precio, inicial, stock, minimo } =
-    prodIndividual;
+  const { imagen, titulo, desc, precio, inicial, stock, minimo } = prodIndividual;
+  
   const navigate = useNavigate();
   
   const [show,setShow] = useState(true)
-
-
-
 
   const onAdd =(contador) => {
       setShow(false)

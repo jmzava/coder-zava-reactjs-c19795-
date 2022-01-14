@@ -20,9 +20,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     function removeItemCarrito(itemId){
-        console.log(itemId)
         setCartLista(cartLista.filter(item => item.id !== itemId))
-        console.log(cartLista)
     }
 
     return(
