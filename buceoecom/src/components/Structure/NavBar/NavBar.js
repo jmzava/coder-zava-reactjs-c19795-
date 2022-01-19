@@ -12,11 +12,11 @@ import { useCartContext } from "../../../context/cartContext";
 function NavBar() {
   const {globoCarrito} =  useCartContext()
 
-  const pepe = globoCarrito()
+  const globoCart = globoCarrito()
 
   
   return (
-    <Navbar className='navBarColor'>
+    <Navbar fixed="top" className='navBarColor'>
         <Container>
           <Navbar.Brand>
               <img src={Logo} className="d-inline-block logo" alt="logo" />
@@ -38,7 +38,7 @@ function NavBar() {
             <Nav.Link className="cartLogo" eventKey="2" as={Link} to="/cart">
               <CartWidget />
             </Nav.Link>
-            {pepe > 0 ? <div className="cartNumber"> {pepe} </div> : <div></div>}
+            {globoCart > 0 ? <div className="cartNumber"> {globoCart} </div> : <div></div>}
           </Nav>
         </Navbar.Collapse>
       </Container>
