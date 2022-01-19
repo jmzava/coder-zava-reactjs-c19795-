@@ -7,7 +7,8 @@ import CartItem from "./CartItem";
 
 function Cart() {
     const navigate = useNavigate();
-    const {cartLista, vaciarCarrito} = useCartContext()
+    const {cartLista, vaciarCarrito, sumaCarrito} = useCartContext()
+    const sumaCart=sumaCarrito()
 
     if (cartLista.length!==0){
       return (
@@ -29,15 +30,17 @@ function Cart() {
 
                         </div>
                         <div className="cartFooter">
-                        <div className="cartCeldaBotonVolver2">
-                              <button className=" cartBotonVolver2" onClick={vaciarCarrito}>Vaciar</button>
-                        </div>
-                        <div className="cartCeldaBotonVolver1"></div>
+                              <div className="cartCeldaBotonVolver2">
+                                    <button className=" cartBotonVolver2" onClick={vaciarCarrito}>Vaciar</button>
+                              </div>
+                              <div className="cartCeldaBotonVolver1"></div>
 
-                        <div className="cartCeldaBotonVolver2">
-                              <button className=" cartBotonVolver2" onClick={()=>navigate(-1)}>Volver</button>
+                              <div className="cartCeldaBotonVolver2">
+                                    <button className=" cartBotonVolver2" onClick={()=>navigate(-1)}>Volver</button>
+                              </div>
+                              <h3 > El total de su compra sera de ${sumaCart}</h3>
                         </div>
-                        </div>
+
                   </div>
                   <br />
                   <br />

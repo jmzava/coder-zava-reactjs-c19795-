@@ -17,6 +17,13 @@ export const CartContextProvider = ({children}) => {
                
     return totalProducts
     }
+
+    function sumaCarrito(){
+
+        const sumaTotalCarrito =cartLista.map(valorTotalCarrito=>valorTotalCarrito.qty*valorTotalCarrito.precio).reduce((prev,curr)=> prev+curr,0)
+
+    return sumaTotalCarrito
+    }
     
     function agregarItemCarrito (items) {
         
@@ -48,6 +55,7 @@ export const CartContextProvider = ({children}) => {
             agregarItemCarrito,
             removeItemCarrito,
             vaciarCarrito,
+            sumaCarrito,
             globoCarrito
             }}
      > 

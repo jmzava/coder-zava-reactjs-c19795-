@@ -11,6 +11,7 @@ import { useCartContext } from "../../../context/cartContext";
 
 function NavBar() {
   const {globoCarrito} =  useCartContext()
+  
 
   const globoCart = globoCarrito()
 
