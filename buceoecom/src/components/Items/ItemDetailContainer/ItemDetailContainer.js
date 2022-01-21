@@ -5,6 +5,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import CargandoSpinner from "../../Structure/Spinners/Spinner";
 import"./ItemDetailContainer.css"
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore, query } from "firebase/firestore";
 
 function ItemDetailContainer() {
     const [cargandoProdIndividual, setCargandoProdIndividual] = useState(true)
@@ -12,6 +13,16 @@ function ItemDetailContainer() {
 
   const {idProducto} = useParams()
 
+// useEffect(() => {
+//   const db = getFirestore()
+//   const queryDB= query(collection(db, 'Productos'))
+//   getDocs(queryDB)
+//   .then(res=> console.log(res))
+
+
+// },[idProducto])
+
+  // sin firebase
   useEffect(() => {
     cargaPromesa
     .then((resp) => setProdIndividual(resp.find(prod => prod.id === idProducto)))
@@ -19,7 +30,6 @@ function ItemDetailContainer() {
     .finally(()=> setCargandoProdIndividual(false));
   },[idProducto]);
   
-
   return (
     <div>
             {cargandoProdIndividual ? (
