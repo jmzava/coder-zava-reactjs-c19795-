@@ -4,6 +4,7 @@ import Logo from "../../Structure/Images/logo/scuba.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useCartContext } from "../../../context/cartContext";
 import CartItem from "./CartItem";
+import CheckOut from "../CheckOut/CheckOut";
 
 function Cart() {
     const navigate = useNavigate();
@@ -33,7 +34,10 @@ function Cart() {
                               <div className="cartCeldaBotonVolver2">
                                     <button className=" cartBotonVolver2" onClick={vaciarCarrito}>Vaciar</button>
                               </div>
-                              <div className="cartCeldaBotonVolver1"></div>
+                              <div className="cartCeldaBotonVolver1">
+                                    
+                                    <button className=" cartBotonVolver2">CheckOut</button>
+                              </div>
 
                               <div className="cartCeldaBotonVolver2">
                                     <button className=" cartBotonVolver2" onClick={()=>navigate(-1)}>Volver</button>
@@ -57,7 +61,7 @@ return(
                         <img className="proxCartImagen" src={Logo} alt="Logo Buceo"/>
                         <div className="proxCartCard">
                               <h1>Su carrito esta Vacio</h1>
-                              <Link to="/categoria/todos">
+                              <Link to="/productos">
                                     <button className="btnItemDetail btnCardItemDetail"  >ir A Comprar</button>
                               </Link>
                         </div>
