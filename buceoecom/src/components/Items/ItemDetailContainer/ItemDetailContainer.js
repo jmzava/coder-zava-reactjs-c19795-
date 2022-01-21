@@ -17,7 +17,7 @@ useEffect(() => {
       const consultaProducto = doc(dbProductos, "Productos", idProducto)
       getDoc(consultaProducto)
       .then((resp) => setProdIndividual({id: resp.id, ...resp.data()}))
-      .catch((err) => console.log(err))
+      .catch(err => err)
       .finally(()=> setCargandoProdIndividual(false));
  },[idProducto])
 

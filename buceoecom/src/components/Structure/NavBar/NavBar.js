@@ -28,11 +28,11 @@ function NavBar() {
           <Nav className="me-auto" bg="dark">
             <Nav.Link eventKey="2" as={Link} to="/">Inicio</Nav.Link>
             <NavDropdown title="Tienda" id="collasible-nav-dropdown" bg="dark">
-              <Nav.Link eventKey="2" as={Link} to="/categoria/Visor">Visores</Nav.Link>
-              <Nav.Link eventKey="2" as={Link} to="/categoria/Aletas">Aletas</Nav.Link>
-              <Nav.Link eventKey="2" as={Link} to="/categoria/Varios">Varios</Nav.Link>
+              <Nav.Link eventKey="2" as={Link} to="/productos/Visor">Visores</Nav.Link>
+              <Nav.Link eventKey="2" as={Link} to="/productos/Aletas">Aletas</Nav.Link>
+              <Nav.Link eventKey="2" as={Link} to="/productos/Varios">Varios</Nav.Link>
               <NavDropdown.Divider />
-              <Nav.Link eventKey="2" as={Link} to="/categoria/todos">Todos</Nav.Link>
+              <Nav.Link eventKey="2" as={Link} to="/productos">Todos</Nav.Link>
             </NavDropdown>
           </Nav>
           <Nav>
