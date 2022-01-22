@@ -1,0 +1,71 @@
+.rowCheckOut {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    margin: 15 -16px;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+  
+}
+.col-75-CK {
+    -ms-flex: 75%; 
+    flex: 75%;
+    padding: 0 16px;
+  }
+
+  .containerCheckOut {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+  }
+  
+  .col-25-CK {
+    -ms-flex: 25%; 
+    flex: 25%;
+    padding: 0 16px;
+  }
+
+  .price {
+    float: right;
+    color: rgb(8, 8, 8);
+    text-decoration-style: solid;
+  }
+  .priceTotal {
+    float: right;
+    color: rgb(8, 8, 8);
+  }
+
+  .cartBotonModificar{
+      float: right;
+      background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+      border-radius: 1.5rem;
+      color: #FFFFFF;
+      cursor: pointer;
+      touch-action: manipulation;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      border: 1;
+  }
+
+  .cartBotonModificar:hover {
+	background-image: linear-gradient(-180deg, #032635 0%, #1E96C8 100%);
+  }
+
+.cartBotonComprar{
+    float: right;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+    border-radius: 1.5rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    touch-action: manipulation;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: 1;
+}
+
+.cartBotonComprar:hover {
+  background-image: linear-gradient(-180deg, #032635 0%, #1E96C8 100%);
+}

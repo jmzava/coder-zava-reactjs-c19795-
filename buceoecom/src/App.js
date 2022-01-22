@@ -5,9 +5,10 @@ import NavBar from "./components/Structure/NavBar/NavBar";
 import ItemListContainer from "./components/Items/ItemListContainer/ItemListContainer";
 import Pagina from "./components/Structure/Pagina/Pagina";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer/ItemDetailContainer";
-import Cart from "./components/Items/Cart/Cart"
+import Cart from "./components/Cart/Cart"
 import { CartContextProvider } from "./context/cartContext";
 import Footer from "./components/Structure/Footer/Footer"
+import CheckOut from "./components/CheckOut/CheckOut";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path ='/productos' element={<ItemListContainer />}/>
             <Route exact path ='/item/:idProducto' element={<ItemDetailContainer />}/>
             <Route exact path ='/cart' element={<Cart />}/>
+            <Route exact path ='/cart/CheckOut' element={<CheckOut />}/>
         </Routes>
  
       </BrowserRouter>

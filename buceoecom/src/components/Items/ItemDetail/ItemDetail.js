@@ -2,7 +2,6 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
-// import { useState } from 'react';
 import { useCartContext } from "../../../context/cartContext";
 
 function ItemDetail({ prodIndividual }) {
@@ -10,10 +9,8 @@ function ItemDetail({ prodIndividual }) {
   
   const navigate = useNavigate();
   
-  // const [show,setShow] = useState(true)
   
   const onAdd =(contador) => {
-      // setShow(false)
       agregarItemCarrito({...prodIndividual, qty: contador})
   }
 
@@ -38,7 +35,6 @@ function ItemDetail({ prodIndividual }) {
             <br />
             <br />
             <button className="btnItemDetail btnCardItemDetail" onClick={()=>navigate(-1)}>Volver</button>
-            {/* <button className="btnItemDetail btnCardItemDetail">Add to Cart</button> */}
         </div>
       </div>
     </div>

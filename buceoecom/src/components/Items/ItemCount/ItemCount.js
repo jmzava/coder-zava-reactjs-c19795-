@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './ItemCount.css'
-
+ 
 function ItemCount({ contadorInicial, contadorStock, contadorMinimo, onAdd }) {
   const [contador, mueveContador] = useState(contadorInicial);
 

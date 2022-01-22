@@ -41,6 +41,13 @@ export const CartContextProvider = ({children}) => {
         }
     }
 
+    function modificoStockCarrito(itemsCarrito){
+        const indiceCart=cartLista.findIndex(i => i.id === itemsCarrito.id)
+        cartLista[indiceCart].qty=itemsCarrito.contador
+        let arrAuxCart = [...cartLista]
+        setCartLista(arrAuxCart)
+    }
+
     function vaciarCarrito(){
         setCartLista([])
     }
@@ -56,7 +63,8 @@ export const CartContextProvider = ({children}) => {
             removeItemCarrito,
             vaciarCarrito,
             sumaCarrito,
-            globoCarrito
+            globoCarrito,
+            modificoStockCarrito
             }}
      > 
      {children}
