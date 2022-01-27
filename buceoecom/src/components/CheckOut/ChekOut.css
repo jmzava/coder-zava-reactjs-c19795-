@@ -69,3 +69,40 @@
 .cartBotonComprar:hover {
   background-image: linear-gradient(-180deg, #032635 0%, #1E96C8 100%);
 }
+
+.logoOrder {
+  width:180px;
+  display:block;
+  margin:0 auto;
+  position:relative;
+  top:2px;
+}
+
+.ordenGlobal{
+	padding:1em;
+}
+
+.ordenCabecera{
+	padding:0.2em;
+	color: rgb(53, 9, 172);
+	display: flex;
+  flex-wrap: wrap;
+	border-bottom:1px solid rgb(53, 9, 172);
+	font-weight:700;
+}
+
+.ordenPie{
+	padding:0.2em;
+	color: rgb(53, 9, 172);
+	display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(53, 9, 172);
+	font-weight:700;
+}
+.ordenBody{
+	padding:0.4em;
+}
+
+.ordenCelda{
+	width:20%;
+}

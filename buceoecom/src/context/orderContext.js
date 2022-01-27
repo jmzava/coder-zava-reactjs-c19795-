@@ -8,9 +8,9 @@ export function useOrderContext(){
 
 export const OrderContextProvider = ({children}) => {
 
-    const [ordenCompra, setOrdenCompra] = useState([])
+    const [ordenCompra, setOrdenCompra] = useState({})
     
-    function agregarOrden({datosForm}){
+    function agregarOrden(datosForm){
         setOrdenCompra(datosForm)
     }
     function vaciarOrden(){

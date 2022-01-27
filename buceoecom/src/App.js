@@ -9,13 +9,14 @@ import Cart from "./components/Cart/Cart"
 import { CartContextProvider } from "./context/cartContext";
 import Footer from "./components/Structure/Footer/Footer"
 import CheckOut from "./components/CheckOut/CheckOut";
-import Order from "./components/Cart/Order";
-import ProcessOrder from "./components/Cart/ProcessOrder";
+import ProcessOrder from "./components/CheckOut/ProcessOrder";
+import { OrderContextProvider } from "./context/orderContext";
 
 function App() {
   return (
     <div className="buceoecom fondoPagina">
       <CartContextProvider>
+      <OrderContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -29,7 +30,7 @@ function App() {
         </Routes>
  
       </BrowserRouter>
-      
+      </OrderContextProvider>
       </CartContextProvider>
       
       <Footer/>

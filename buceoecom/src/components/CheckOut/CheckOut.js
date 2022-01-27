@@ -3,8 +3,6 @@ import {Form, Row, Col, Button} from 'react-bootstrap'
 import { useCartContext } from '../../context/cartContext';
 import {FaShoppingCart} from "react-icons/fa"
 import { Link } from "react-router-dom";
-import Order from '../Cart/Order'
-import { collection, getFirestore, addDoc } from "firebase/firestore";
 import './ChekOut.css'
 import { useOrderContext } from '../../context/orderContext';
 
@@ -14,7 +12,7 @@ function CheckOut() {
 
     const {cartLista, globoCarrito, sumaCarrito}= useCartContext()
 
-    const {ordenCompra, agregarOrden} =useOrderContext()
+    const {agregarOrden} =useOrderContext()
 
     const cartResumeCant = globoCarrito()
 
@@ -30,44 +28,7 @@ function CheckOut() {
         telefono:''
     });
 
-// async function grabarOrden(){
-//     let orderID = ""  
-//     let ordenCompra = {}
-
-//         ordenCompra.comprador = datosForm
-//         ordenCompra.total = sumaCart
-//         ordenCompra.items = cartLista.map(itemCarrito => {
-//             const itemID = itemCarrito.id;
-//             const itemTitle = itemCarrito.titulo;
-//             const itemPrecio = itemCarrito.precio;
-//             const itemQty = itemCarrito.qty;
-//             const itemTotal = itemCarrito.precio * itemCarrito.qty;
-
-//             return {itemID,itemTitle,itemPrecio,itemQty,itemTotal}
-
-//         })
-
-//         // para grabar la orden a firestore !!!! descomentar 
-
-//         // const database = getFirestore()
-//         // const databaseOrden = collection(database, 'Ordenes')
-//         // await addDoc(databaseOrden, ordenCompra)
-//         // .then(resp => orderID=resp.id)
-//         // .catch(err => console.log(err))
-//         // .finally(() =>console.log("cargando"))
-
-//         // console.log(ordenCompra)
-
-//         Order(cartLista.titulo)
-
-
-
-
-// }
-
-const ordenProcess =() => {
-    console.log("por procesar orden")
-    console.log(datosForm)
+    const ordenProcess =() => {
     agregarOrden(datosForm)
 }
 
@@ -129,7 +90,7 @@ return <>
                     </Link> 
                     <br/>
                     <br/>
-                    </Form>
+                    </Form> 
 </div>
             </div>
             <div className="col-25-CK ">
