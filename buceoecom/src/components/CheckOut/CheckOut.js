@@ -47,18 +47,18 @@ return <>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Nombre</Form.Label>
-                                <input className= "form-control" placeholder="Nombre" name='nombre' onChange={handleChange} value={datosForm.nombre}/>
+                                <input className= "form-control" placeholder="Nombre" name='nombre' onChange={handleChange} value={datosForm.nombre} required/>
                                 {/* <Form.Control placeholder="Nombre" /> */}
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridApellido">
                                 <Form.Label>Apellido</Form.Label>
-                                <input className= "form-control" placeholder="Apellido" name='apellido' onChange={handleChange} value={datosForm.apellido}/>
+                                <input className= "form-control" placeholder="Apellido" name='apellido' onChange={handleChange} value={datosForm.apellido}required/>
                                 </Form.Group>                                
                                 
                                 <Form.Group as={Col} controlId="formGridCorreo">
                                 <Form.Label>Correo Electronico</Form.Label>
-                                <input className= "form-control" type="email" placeholder="correo@sucorreo.com" name='email' onChange={handleChange} value={datosForm.email}/>
+                                <input className= "form-control" type="email" placeholder="correo@sucorreo.com" name='email' onChange={handleChange} value={datosForm.email}required/>
                                 </Form.Group>
                                 
                             </Row>

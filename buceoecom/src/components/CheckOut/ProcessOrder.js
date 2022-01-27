@@ -3,7 +3,10 @@ import { collection, getFirestore, addDoc, query, where, documentId, writeBatch,
 import { useCartContext } from '../../context/cartContext';
 import { useOrderContext } from '../../context/orderContext';
 import CargandoSpinner from '../Structure/Spinners/Spinner';
-import Order from './Order';
+import Logo from "../Structure/Images/logo/scuba.png";
+import { Link, Navigate} from "react-router-dom";
+
+
 
 function ProcessOrder() {
     const {ordenCompra} =useOrderContext()
@@ -12,11 +15,7 @@ function ProcessOrder() {
     const [ordenID, setOrdenID] =useState("")
     const datosOrden = ordenCompra
     const sumaCart=sumaCarrito()
-
-    useEffect(() => {
-        grabarOrden()
-   },[]);
-
+    
     async function grabarOrden(){
  
       let ordenDeCompra = {}
@@ -37,25 +36,29 @@ function ProcessOrder() {
           await addDoc(databaseOrden, ordenDeCompra)
           .then(resp => setOrdenID(resp.id))
           .catch(err => console.log(err))
-          .finally(()=> setProcesandoOrden(false))
+          .finally(()=> console.log(ordenID))
           
           const actualizarStock = collection(database, "Productos")
-          const consultaStock = query( actualizarStock, where( documentId() , 'in', cartLista.map(it => it.id))          
-        ) 
+          const consultaStock = query( actualizarStock, where( documentId() , 'in', cartLista.map(it => it.id))) 
 
           const procesoActualizarStock = writeBatch(database)
           await getDocs(consultaStock)
-          .then(resp => resp.docs.forEach(res => procesoActualizarStock.update(res.ref,{stock: res.data().stock - cartLista.find(item => item.id=== res.id).qty})))
+          .then(resp => resp.docs.forEach(res => procesoActualizarStock.update(res.ref, {stock: res.data().stock - cartLista.find(item => item.id === res.id).qty})))
           .catch(err => console.log(err))
-          .finally(()=> console.log("stock actualizado"))
+          .finally(()=> setProcesandoOrden(false))
+          procesoActualizarStock.commit()
 
-    vaciarCarrito()    
+          vaciarCarrito()    
     }
+     
+    useEffect(() => {
+      if (cartLista.length!==0){
+                  grabarOrden()
+                }},[cartLista]);
 
+    if (cartLista.length!==0){
 
-
-
-   return(
+      return(
        <div>
             {procesandoOrden ? (
              <h2>
@@ -63,12 +66,29 @@ function ProcessOrder() {
             <CargandoSpinner/>
           </h2>
         ) : (
-          
-          <Order ordenID={ordenID}/>
+          <>
+          <Navigate to= {`/cart/Order/${ordenID}`} />
+          </>
        )
    }
        </div>
   )
 }
 
+return(
+<div>
+      <section className="proxCart">
+            <div className="proxCartContenido">
+                  <img className="proxCartImagen" src={Logo} alt="Logo Buceo"/>
+                  <div className="proxCartCard">
+                        <h1>Su carrito esta Vacio</h1>
+                        <Link to="/productos">
+                              <button className="btnItemDetail btnCardItemDetail"  >ir A Comprar</button>
+                        </Link>
+                  </div>
+            </div>
+      </section>
+</div>
+);
+}
 export default ProcessOrder;

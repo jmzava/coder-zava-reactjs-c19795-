@@ -1,32 +1,34 @@
 import { collection, doc, getDoc, getFirestore} from 'firebase/firestore';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from "../Structure/Images/logo/scuba.png";
 import './ChekOut.css'
-import { useEffect } from 'react';
+import { useParams } from "react-router-dom";
+
 import OrderItem from './OrderItem'
 
 
-function Order(orderID) {
+function Order() {
 
   const [detalleOrden,setDetalleOrden]=useState()
   const [ordenShow,setOrdenShow]=useState(false)
-  const idCompra=orderID.ordenID
 
-  useEffect(() => {
+  const {idOrden} = useParams()
+
+  const idCompra=idOrden
+  
+
+  useEffect(() => {consultarOrden()},[])
 
 
-        consultarOrden()
-  },[])
-
-  async function consultarOrden(){
-    const baseOrdenConexion= getFirestore()
-    const baseOrdenFacturada= collection(baseOrdenConexion, 'Ordenes')
-    const docOrdenFacturada = doc(baseOrdenFacturada, idCompra)
-    await getDoc(docOrdenFacturada)
-          .then(resp => setDetalleOrden(resp.data()))
-          .catch(err => console.log(err))
-          .finally(()=> setOrdenShow(true))
-          }
+async function consultarOrden(){
+  const baseOrdenConexion= getFirestore()
+  const baseOrdenFacturada= collection(baseOrdenConexion, 'Ordenes')
+  const docOrdenFacturada = doc(baseOrdenFacturada, idCompra)
+  await getDoc(docOrdenFacturada)
+        .then(resp => setDetalleOrden(resp.data()))
+        .catch(err => console.log(err))
+        .finally(()=> setOrdenShow(true))
+        }
 
 
    return(

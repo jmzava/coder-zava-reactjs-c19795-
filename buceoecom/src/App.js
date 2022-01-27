@@ -11,6 +11,7 @@ import Footer from "./components/Structure/Footer/Footer"
 import CheckOut from "./components/CheckOut/CheckOut";
 import ProcessOrder from "./components/CheckOut/ProcessOrder";
 import { OrderContextProvider } from "./context/orderContext";
+import Order from "./components/CheckOut/Order";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route exact path ='/cart' element={<Cart />}/>
             <Route exact path ='/cart/CheckOut' element={<CheckOut />}/>
             <Route exact path ='/cart/ProcessOrder' element={<ProcessOrder />}/>
+            <Route exact path ='/cart/Order/:idOrden' element={<Order />}/>
         </Routes>
  
       </BrowserRouter>
