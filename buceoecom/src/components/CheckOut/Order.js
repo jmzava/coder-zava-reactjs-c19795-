@@ -4,33 +4,29 @@ import Logo from "../Structure/Images/logo/scuba.png";
 import './ChekOut.css'
 import { useEffect } from 'react';
 import OrderItem from './OrderItem'
-import { useCartContext } from '../../context/cartContext';
 
 
 function Order(orderID) {
 
-  const {vaciarCarrito}= useCartContext()
   const [detalleOrden,setDetalleOrden]=useState()
   const [ordenShow,setOrdenShow]=useState(false)
   const idCompra=orderID.ordenID
 
   useEffect(() => {
-    
-      async function consultarOrden(){
-  
-      const baseOrdenConexion= getFirestore()
-      const baseOrdenFacturada= collection(baseOrdenConexion, 'Ordenes')
-      const docOrdenFacturada = doc(baseOrdenFacturada, idCompra)
-      await getDoc(docOrdenFacturada)
-            .then(resp => setDetalleOrden(resp.data()))
-            .catch(err => console.log(err))
-            .finally(()=> {setOrdenShow(true) ; vaciarCarrito()})
-            }
-    
-     consultarOrden()
-  },[idCompra]);
 
-  
+
+        consultarOrden()
+  },[])
+
+  async function consultarOrden(){
+    const baseOrdenConexion= getFirestore()
+    const baseOrdenFacturada= collection(baseOrdenConexion, 'Ordenes')
+    const docOrdenFacturada = doc(baseOrdenFacturada, idCompra)
+    await getDoc(docOrdenFacturada)
+          .then(resp => setDetalleOrden(resp.data()))
+          .catch(err => console.log(err))
+          .finally(()=> setOrdenShow(true))
+          }
 
 
    return(
@@ -68,6 +64,10 @@ function Order(orderID) {
                   </div>
               </div>
           </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     </div>
   );
 }
