@@ -9,9 +9,6 @@ const{removeItemCarrito, modificoStockCarrito}=useCartContext()
 const { id, imagen, titulo, desc, precio, qty, stock, minimo } =productos;
 
 const modifycarQtyCart =(contador) => {
-        // console.log("qty viejo" , qty);
-        // console.log("qty nuevo" , contador);
-        // console.log("id de producto", id)
         modificoStockCarrito({...productos, contador})
 }
     return (       

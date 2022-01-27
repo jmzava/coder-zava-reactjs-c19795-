@@ -20,13 +20,6 @@ function ItemListContainer() {
                               : 
                                     query(collection(dbProductos, "Productos"))  
 
-       // let consultaProductos = {}
-
-    // if (idCategoria==="todos") {
-    //   consultaProductos = query(collection(dbProductos, "Productos"))  
-    // }else{
-    //   consultaProductos = query(collection(dbProductos, "Productos"), where('categoria', '==', idCategoria))
-    // }
     getDocs(consultaProductos)
     .then(resp => setProductos (resp.docs.map(prod => ({id: prod.id, ...prod.data()}))))
     .catch(err => err)

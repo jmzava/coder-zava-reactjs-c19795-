@@ -56,6 +56,7 @@ export const CartContextProvider = ({children}) => {
         setCartLista(cartLista.filter(item => item.id !== itemId))
     }
 
+    
     return(
         <CartContext.Provider value ={{
             cartLista,
