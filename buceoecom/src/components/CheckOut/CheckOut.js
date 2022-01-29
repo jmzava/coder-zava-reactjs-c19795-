@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-// import { Formik } from "formik";
 
 import { useCartContext } from '../../context/cartContext';
 import { useOrderContext } from '../../context/orderContext';
@@ -15,6 +14,8 @@ function CheckOut() {
     const cartResumeCant = globoCarrito()
     const sumaCart=sumaCarrito()
     const [validated, setValidated]=useState(false)
+    const [procesarLaOrden, setProcesarLaOrden]=useState(false)
+ 
     const [datosForm, setDatosForm] = useState({
         nombre:'',
         apellido: '',
@@ -24,31 +25,43 @@ function CheckOut() {
         cp:'',
         telefono:''
     });
+
     let navegar=useNavigate();
 
 
-    const ordenProcess = async () => {
-        return datosForm
-       }
-    // const ordenProcess =() => {agregarOrden(datosForm)}
-
+    // const ordenProcess = async () => {
+    //     return 
+    //    }
+  
     function handleChange(e){
         setDatosForm({
                 ...datosForm,
             [e.target.name]: e.target.value
         })
     }
+    
+
+    useEffect(() => {
+        if(procesarLaOrden){
+            agregarOrden(datosForm)
+            navegar("/cart/ProcessOrder")
+            }
+    })
+
     const handleSubmit = (event) => {
         const form = event.currentTarget;
-        console.log(validated)
+
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+        }else{
+            event.preventDefault();
+            event.stopPropagation();
+            setProcesarLaOrden(true)
         }
-        ordenProcess()
-            .then(() => setValidated(true))
-            .then(res => agregarOrden(res))
-            .finally(()=> navegar("/cart/ProcessOrder"))
+            setValidated(true);
+       
+
       };
 
 return <>
@@ -57,20 +70,10 @@ return <>
                 <div className="containerCheckOut">
                 
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                {/*  */}
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Nombre</Form.Label>
-                                {/* <Form.Control
-                                    required
-                                    type="text"
-                                    placeholder="Nombre"
-                                    defaultValue=""
-                                    onChange={handleChange}
-                                    value={datosForm.nombre} 
-                                /> */}
                                 <input className= "form-control" placeholder="Nombre" name='nombre'  onChange={handleChange} value={datosForm.nombre} required/>
-                                {/* <Form.Control placeholder="Nombre" /> */}
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridApellido">
