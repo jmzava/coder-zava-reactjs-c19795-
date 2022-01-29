@@ -36,7 +36,7 @@ function ProcessOrder() {
           await addDoc(databaseOrden, ordenDeCompra)
           .then(resp => setOrdenID(resp.id))
           .catch(err => console.log(err))
-          .finally(()=> console.log(ordenID))
+      //     .finally(()=> console.log(ordenID))
           
           const actualizarStock = collection(database, "Productos")
           const consultaStock = query( actualizarStock, where( documentId() , 'in', cartLista.map(it => it.id))) 

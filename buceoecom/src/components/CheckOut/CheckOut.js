@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+// import { Formik } from "formik";
 
 import { useCartContext } from '../../context/cartContext';
 import { useOrderContext } from '../../context/orderContext';
@@ -23,32 +24,38 @@ function CheckOut() {
         cp:'',
         telefono:''
     });
+    let navegar=useNavigate();
 
-    const ordenProcess =() => {agregarOrden(datosForm)}
+
+    const ordenProcess = async () => {
+        return datosForm
+       }
+    // const ordenProcess =() => {agregarOrden(datosForm)}
 
     function handleChange(e){
         setDatosForm({
                 ...datosForm,
             [e.target.name]: e.target.value
         })
-    
-        const handleSubmit = (event) => {
-            const form = event.currentTarget;
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-        
-            setValidated(true);
-          };
-
-    
     }
+    const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        console.log(validated)
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        ordenProcess()
+            .then(() => setValidated(true))
+            .then(res => agregarOrden(res))
+            .finally(()=> navegar("/cart/ProcessOrder"))
+      };
 
 return <>
    <div className="rowCheckOut">
             <div className="col-75-CK">
                 <div className="containerCheckOut">
+                
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 {/*  */}
                             <Row className="mb-3">
@@ -102,7 +109,7 @@ return <>
 
                      {/* <Link to="/cart/ProcessOrder"> */}
                         <Button type="submit" className='button cartBotonComprar'>Comprar</Button>
-                        {/* onClick={()=>ordenProcess()} */}
+                        {/* onClick={()=>ordenProcess()}*/}
                     {/* </Link>  */}
                     <br/>
                     <br/>
