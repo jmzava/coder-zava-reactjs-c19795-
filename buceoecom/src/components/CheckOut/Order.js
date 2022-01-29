@@ -16,7 +16,7 @@ function Order() {
 
   const idCompra=idOrden
   
-
+  // eslint-disable-next-line
   useEffect(() => {consultarOrden()},[])
 
 

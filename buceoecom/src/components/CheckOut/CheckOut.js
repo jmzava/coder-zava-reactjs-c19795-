@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
-import {Form, Row, Col, Button} from 'react-bootstrap'
-import { useCartContext } from '../../context/cartContext';
-import {FaShoppingCart} from "react-icons/fa"
+import { useState } from 'react';
+import { Form, Row, Col, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import './ChekOut.css'
+import { FaShoppingCart } from "react-icons/fa";
+
+import { useCartContext } from '../../context/cartContext';
 import { useOrderContext } from '../../context/orderContext';
-
-
+import './ChekOut.css';
 
 function CheckOut() {
 
     const {cartLista, globoCarrito, sumaCarrito}= useCartContext()
-
     const {agregarOrden} =useOrderContext()
-
     const cartResumeCant = globoCarrito()
-
     const sumaCart=sumaCarrito()
-
+    const [validated, setValidated]=useState(false)
     const [datosForm, setDatosForm] = useState({
         nombre:'',
         apellido: '',
@@ -28,26 +24,45 @@ function CheckOut() {
         telefono:''
     });
 
-    const ordenProcess =() => {
-    agregarOrden(datosForm)
-}
+    const ordenProcess =() => {agregarOrden(datosForm)}
 
-function handleChange(e){
-    setDatosForm({
-            ...datosForm,
-        [e.target.name]: e.target.value
-    })
-}
+    function handleChange(e){
+        setDatosForm({
+                ...datosForm,
+            [e.target.name]: e.target.value
+        })
+    
+        const handleSubmit = (event) => {
+            const form = event.currentTarget;
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+        
+            setValidated(true);
+          };
+
+    
+    }
 
 return <>
    <div className="rowCheckOut">
             <div className="col-75-CK">
                 <div className="containerCheckOut">
-                        <Form>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                {/*  */}
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Nombre</Form.Label>
-                                <input className= "form-control" placeholder="Nombre" name='nombre' onChange={handleChange} value={datosForm.nombre} required/>
+                                {/* <Form.Control
+                                    required
+                                    type="text"
+                                    placeholder="Nombre"
+                                    defaultValue=""
+                                    onChange={handleChange}
+                                    value={datosForm.nombre} 
+                                /> */}
+                                <input className= "form-control" placeholder="Nombre" name='nombre'  onChange={handleChange} value={datosForm.nombre} required/>
                                 {/* <Form.Control placeholder="Nombre" /> */}
                                 </Form.Group>
 
@@ -85,9 +100,10 @@ return <>
                             </Form.Group>
                         </Row>
 
-                     <Link to="/cart/ProcessOrder">
-                        <Button className='button cartBotonComprar' onClick={()=>ordenProcess()}>Comprar</Button>
-                    </Link> 
+                     {/* <Link to="/cart/ProcessOrder"> */}
+                        <Button type="submit" className='button cartBotonComprar'>Comprar</Button>
+                        {/* onClick={()=>ordenProcess()} */}
+                    {/* </Link>  */}
                     <br/>
                     <br/>
                     </Form> 

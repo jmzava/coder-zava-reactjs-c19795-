@@ -50,11 +50,8 @@ function ProcessOrder() {
 
           vaciarCarrito()    
     }
-     
-    useEffect(() => {
-      if (cartLista.length!==0){
-                  grabarOrden()
-                }},[cartLista]);
+    //eslint-disable-next-line
+    useEffect(() => {if (cartLista.length!==0){grabarOrden()}},[cartLista]);
 
     if (cartLista.length!==0){
 
