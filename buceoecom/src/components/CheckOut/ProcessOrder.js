@@ -58,10 +58,7 @@ function ProcessOrder() {
       return(
        <div>
             {procesandoOrden ? (
-             <h2>
-            Procesando Orden 
-            <CargandoSpinner/>
-          </h2>
+             <CargandoSpinner mensaje="Procesando Orden "/>
         ) : (
           <>
           <Navigate to= {`/cart/Order/${ordenID}`} />

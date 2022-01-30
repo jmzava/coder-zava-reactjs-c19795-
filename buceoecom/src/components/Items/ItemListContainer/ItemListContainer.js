@@ -30,12 +30,9 @@ function ItemListContainer() {
   return (
     <div>
       {cargando ? (
-        <h2 className="centerText">
-          Cargando Contenido Listado Productos
-          <CargandoSpinner />
-        </h2>
+          <CargandoSpinner mensaje="Cargando Contenido Listado Productos"/>
       ) : (
-        <ItemList productos={productos} />
+          <ItemList productos={productos} />
       )}
     </div>
   );

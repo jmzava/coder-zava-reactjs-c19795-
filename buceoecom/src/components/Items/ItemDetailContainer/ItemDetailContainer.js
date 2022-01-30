@@ -24,10 +24,8 @@ useEffect(() => {
   return (
     <div>
             {cargandoProdIndividual ? (
-           <h2 className="centerText">
-          Cargando Contenido Item Individual <CargandoSpinner />
-        </h2>
-      ) : (
+           <CargandoSpinner mensaje="Cargando Item Individual"/>
+       ) : (
         <ItemDetail prodIndividual={prodIndividual}/>
       )
 }

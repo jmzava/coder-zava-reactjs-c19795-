@@ -2,7 +2,7 @@ import { collection, doc, getDoc, getFirestore} from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import Logo from "../Structure/Images/logo/scuba.png";
 import './ChekOut.css'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import OrderItem from './OrderItem'
 
@@ -63,6 +63,10 @@ async function consultarOrden(){
                   <div className="containerCheckOut">
                       <img className="logoOrder" src={Logo} alt="Logo Buceo"/>
                       <h3>Gracias Por su Compra</h3>
+                      <Link to="/">
+                      <button className="cartBotonFinal"  >Inicio</button>
+                      </Link>
+                  <br/>
                   </div>
               </div>
           </div>

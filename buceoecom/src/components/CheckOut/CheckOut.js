@@ -90,23 +90,23 @@ return <>
 
                             <Form.Group className="mb-3" controlId="formGridAddress1">
                                 <Form.Label>Direccion</Form.Label>
-                                <input className= "form-control" placeholder="Avenida Siempre Viva 742" name='direccion' onChange={handleChange} value={datosForm.direccion}/>
+                                <input className= "form-control prevent-validation" placeholder="Avenida Siempre Viva 742" name='direccion' onChange={handleChange} value={datosForm.direccion}/>
                            </Form.Group>
 
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridCiudad">
                                     <Form.Label>Ciudad</Form.Label>
-                                    <input className= "form-control" placeholder="Ciudad" name='ciudad' onChange={handleChange} value={datosForm.ciudad}/>
+                                    <input className= "form-control prevent-validation" placeholder="Ciudad" name='ciudad' onChange={handleChange} value={datosForm.ciudad}/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridZipCode">
                                      <Form.Label>Codigo Postal</Form.Label>
-                                     <input className= "form-control" placeholder="Codigo Postal" name='cp' onChange={handleChange} value={datosForm.cp}/>
+                                     <input className= "form-control prevent-validation" placeholder="Codigo Postal" name='cp' onChange={handleChange} value={datosForm.cp}/>
                                 </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridTelefono">
                             <Form.Label>Telefono</Form.Label>
-                            <input className= "form-control" placeholder="Telefono" name='telefono' onChange={handleChange} value={datosForm.telefono}/>
+                            <input className= "form-control prevent-validation" placeholder="Telefono" name='telefono' onChange={handleChange} value={datosForm.telefono}/>
                             </Form.Group>
                         </Row>
 
