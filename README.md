@@ -45,9 +45,9 @@ Se abrira el navegador  **http://localhost:3000** para su visualización.
 - Para realizar la compra, debe ingresar al carrito, clickar en checkout , y completar el formulario con sus datos.
 - Desde allí se recibira la orden de compra en la base de firebase y se mostrsara la misma en una pantalla final 
 
-# Demo
+# Demo on Line
 
-
+https://musing-mirzakhani-03907d.netlify.app/
 
 
 
