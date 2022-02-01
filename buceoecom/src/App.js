@@ -1,23 +1,23 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { OrdenContextProvider } from "./context/orderContext";
+import { CartContextProvider } from "./context/cartContext";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import NavBar from "./components/Structure/NavBar/NavBar";
 import ItemListContainer from "./components/Items/ItemListContainer/ItemListContainer";
 import Pagina from "./components/Structure/Pagina/Pagina";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart"
-import { CartContextProvider } from "./context/cartContext";
 import Footer from "./components/Structure/Footer/Footer"
 import CheckOut from "./components/CheckOut/CheckOut";
 import ProcessOrder from "./components/CheckOut/ProcessOrder";
-import { OrderContextProvider } from "./context/orderContext";
 import Order from "./components/CheckOut/Order";
 
 function App() {
   return (
     <div className="buceoecom fondoPagina">
       <CartContextProvider>
-      <OrderContextProvider>
+      <OrdenContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -32,7 +32,7 @@ function App() {
         </Routes>
  
       </BrowserRouter>
-      </OrderContextProvider>
+      </OrdenContextProvider>
       </CartContextProvider>
       
       <Footer/>

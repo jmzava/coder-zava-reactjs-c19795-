@@ -15,7 +15,7 @@ function ItemCount({ contadorInicial, contadorStock, contadorMinimo, onAdd }) {
       mueveContador(contadorprevio => contadorprevio - 1);
   };
 
-  const resetContador = () =>{
+  const reseteaContador = () =>{
       mueveContador(contadorInicial)
   }
 
@@ -23,10 +23,10 @@ function ItemCount({ contadorInicial, contadorStock, contadorMinimo, onAdd }) {
     <div className="counter">
       <h1 className="contadorText"> {contador}   </h1>
       <button onClick={restaContador}className="botonCard"> - </button>
-      <button onClick={resetContador} className="botonCard2"> Reset </button>
+      <button onClick={reseteaContador} className="botonCard2"> Resetear </button>
       <button onClick={sumaContador} className="botonCard"> + </button>
       <br/>
-      <button onClick={()=> {onAdd(contador); resetContador()}} hidden={contador < 1 && "hidden"} className="btnAddCart">Add to Cart</button>
+      <button onClick={()=> {onAdd(contador); reseteaContador()}} hidden={contador < 1 && "hidden"} className="btnAddCart">Agregar al Cart</button>
     </div>
   );
 }

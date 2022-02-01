@@ -4,16 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
 import { useCartContext } from '../../context/cartContext';
-import { useOrderContext } from '../../context/orderContext';
+import { useOrdenContext } from '../../context/orderContext';
 import './ChekOut.css';
 
 function CheckOut() {
 
     const {cartLista, globoCarrito, sumaCarrito}= useCartContext()
-    const {agregarOrden} =useOrderContext()
+    const {agregarOrden} =useOrdenContext()
     const cartResumeCant = globoCarrito()
     const sumaCart=sumaCarrito()
-    const [validated, setValidated]=useState(false)
+    const [valido, setValido]=useState(false)
     const [procesarLaOrden, setProcesarLaOrden]=useState(false)
  
     const [datosForm, setDatosForm] = useState({
@@ -27,26 +27,20 @@ function CheckOut() {
     });
 
     let navegar=useNavigate();
-
-
-    // const ordenProcess = async () => {
-    //     return 
-    //    }
   
-    function handleChange(e){
-        setDatosForm({
-                ...datosForm,
-            [e.target.name]: e.target.value
-        })
-    }
-    
-
     useEffect(() => {
         if(procesarLaOrden){
             agregarOrden(datosForm)
             navegar("/cart/ProcessOrder")
             }
     })
+
+    function handleChange(e){
+        setDatosForm({
+                ...datosForm,
+            [e.target.name]: e.target.value
+        })
+    }
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -59,7 +53,7 @@ function CheckOut() {
             event.stopPropagation();
             setProcesarLaOrden(true)
         }
-            setValidated(true);
+            setValido(true);
        
 
       };
@@ -69,7 +63,7 @@ return <>
             <div className="col-75-CK">
                 <div className="containerCheckOut">
                 
-                <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                <Form noValidate validated={valido} onSubmit={handleSubmit}>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label>Nombre</Form.Label>
@@ -82,14 +76,14 @@ return <>
                                 </Form.Group>                                
                                 
                                 <Form.Group as={Col} controlId="formGridCorreo">
-                                <Form.Label>Correo Electronico</Form.Label>
+                                <Form.Label>Correo Electrónico</Form.Label>
                                 <input className= "form-control" type="email" placeholder="correo@sucorreo.com" name='email' onChange={handleChange} value={datosForm.email}required/>
                                 </Form.Group>
                                 
                             </Row>
 
                             <Form.Group className="mb-3" controlId="formGridAddress1">
-                                <Form.Label>Direccion</Form.Label>
+                                <Form.Label>Dirección</Form.Label>
                                 <input className= "form-control prevent-validation" placeholder="Avenida Siempre Viva 742" name='direccion' onChange={handleChange} value={datosForm.direccion}/>
                            </Form.Group>
 
@@ -105,15 +99,11 @@ return <>
                                 </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridTelefono">
-                            <Form.Label>Telefono</Form.Label>
+                            <Form.Label>Teléfono</Form.Label>
                             <input className= "form-control prevent-validation" placeholder="Telefono" name='telefono' onChange={handleChange} value={datosForm.telefono}/>
                             </Form.Group>
                         </Row>
-
-                     {/* <Link to="/cart/ProcessOrder"> */}
                         <Button type="submit" className='button cartBotonComprar'>Comprar</Button>
-                        {/* onClick={()=>ordenProcess()}*/}
-                    {/* </Link>  */}
                     <br/>
                     <br/>
                     </Form> 

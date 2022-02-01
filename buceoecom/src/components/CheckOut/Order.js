@@ -36,7 +36,7 @@ async function consultarOrden(){
           <div className="rowCheckOut">
               <div className="col-75-CK">
                   <div className="containerCheckOut">
-                      <h3>Su Orden de Compra ha sido procesada, su ID es : {idCompra} </h3>
+                      <h3>Su orden de compra ha sido procesada, su ID es : {idCompra} </h3>
                       <div className="ordenGlobal">
                                     <div className="ordenCabecera">
                                           <div className="ordenCelda">Producto</div>
@@ -77,7 +77,5 @@ async function consultarOrden(){
     </div>
   );
 }
-
-
 
 export default Order;

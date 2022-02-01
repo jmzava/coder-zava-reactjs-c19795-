@@ -34,12 +34,3 @@ useEffect(() => {
 }
 
 export default ItemDetailContainer;
-
-// import { cargaPromesa } from "../../../helpers/mock";
-  // sin firebase
-  // useEffect(() => {
-  //   cargaPromesa
-  //   .then((resp) => setProdIndividual(resp.find(prod => prod.id === idProducto)))
-  //   .catch((err) => console.log(err))
-  //   .finally(()=> setCargandoProdIndividual(false));
-  // },[idProducto]);

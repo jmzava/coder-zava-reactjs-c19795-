@@ -1,12 +1,12 @@
 import { createContext, useState, useContext} from "react";
 
-const OrderContext = createContext([])
+const OrdenContext = createContext([])
 
-export function useOrderContext(){
-    return useContext(OrderContext)
+export function useOrdenContext(){
+    return useContext(OrdenContext)
 }
 
-export const OrderContextProvider = ({children}) => {
+export const OrdenContextProvider = ({children}) => {
 
     const [ordenCompra, setOrdenCompra] = useState({})
 
@@ -21,13 +21,13 @@ export const OrderContextProvider = ({children}) => {
 
 
 return(
-    <OrderContext.Provider value ={{
+    <OrdenContext.Provider value ={{
             ordenCompra,
             vaciarOrden,
             agregarOrden
             }}
     > 
     {children}
-    </OrderContext.Provider>
+    </OrdenContext.Provider>
     )
 }

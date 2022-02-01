@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { collection, getFirestore, addDoc, query, where, documentId, writeBatch, getDocs } from "firebase/firestore";
 import { useCartContext } from '../../context/cartContext';
-import { useOrderContext } from '../../context/orderContext';
+import { useOrdenContext } from '../../context/orderContext';
 import CargandoSpinner from '../Structure/Spinners/Spinner';
 import Logo from "../Structure/Images/logo/scuba.png";
 import { Link, Navigate} from "react-router-dom";
@@ -9,7 +9,7 @@ import { Link, Navigate} from "react-router-dom";
 
 
 function ProcessOrder() {
-    const {ordenCompra} =useOrderContext()
+    const {ordenCompra} =useOrdenContext()
     const {cartLista, sumaCarrito, vaciarCarrito}= useCartContext() 
     const [procesandoOrden, setProcesandoOrden] = useState(true)
     const [ordenID, setOrdenID] =useState("")
@@ -36,8 +36,7 @@ function ProcessOrder() {
           await addDoc(databaseOrden, ordenDeCompra)
           .then(resp => setOrdenID(resp.id))
           .catch(err => console.log(err))
-      //     .finally(()=> console.log(ordenID))
-          
+              
           const actualizarStock = collection(database, "Productos")
           const consultaStock = query( actualizarStock, where( documentId() , 'in', cartLista.map(it => it.id))) 
 

@@ -4,7 +4,6 @@ import './ChekOut.css'
 function OrderItem(ordenDetalle) {
     
     const { itemPrecio , itemTotal, itemImg, itemQty, itemTitle } =ordenDetalle.ordenDetalle;
-    console.log()
 
   return (
                 <div className="cartItemDetails">

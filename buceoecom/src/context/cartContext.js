@@ -13,9 +13,9 @@ export const CartContextProvider = ({children}) => {
 
     function globoCarrito(){
     
-        const totalProducts=cartLista.map(productCart=>productCart.qty).reduce((prev,curr) => prev+curr,0)
+        const totalProductos=cartLista.map(productosCart=>productosCart.qty).reduce((prev,curr) => prev+curr,0)
                
-    return totalProducts
+    return totalProductos
     }
 
     function sumaCarrito(){
